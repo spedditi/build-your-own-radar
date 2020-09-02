@@ -294,13 +294,14 @@ function plotForm (content) {
     .attr('type', 'text')
     .attr('name', 'sheetId')
     .attr('placeholder', 'e.g. https://docs.google.com/spreadsheets/d/<sheetid> or hosted CSV file')
-    .attr('required', '')
+    .attr('value',"https://docs.google.com/spreadsheets/d/1waDG0_W3-yNiAaUfxcZhTKvl7AUCgXwQw8mdPjCz86U/edit/")
+    .attr('type','hidden')
 
   form.append('button')
     .attr('type', 'submit')
     .append('a')
     .attr('class', 'button')
-    .text('Build my radar')
+    .text('Show MCS CoE Tech Radar 1')
 
   form.append('p').html("<a href='https://www.thoughtworks.com/radar/how-to-byor'>Need help?</a>")
 }
@@ -385,14 +386,21 @@ function plotUnauthorizedErrorMessage () {
     .attr('class', 'error-subtitle')
     .html(`or ${goBack} to try a different sheet.`)
 
-  button.on('click', _ => {
-    var queryString = window.location.href.match(/sheetId(.*)/)
-    var queryParams = queryString ? QueryParams(queryString[0]) : {}
-    const sheet = GoogleSheet(queryParams.sheetId, queryParams.sheetName)
-    sheet.authenticate(true, _ => {
-      content.remove()
-    })
-  })
-}
+    document.addEventListener("DOMContentLoaded", function(){
+      //....
+      var queryString = window.location.href.match(/sheetId(.*)/)
+      var queryParams = queryString ? QueryParams(queryString[0]) : {}
+      const sheet = GoogleSheet(queryParams.sheetId, queryParams.sheetName)
+      sheet.authenticate(true, _ => {
+        content.remove()
+      })
+  });
+  
+
+   
+  }
+  
+
+
 
 module.exports = GoogleSheetInput
