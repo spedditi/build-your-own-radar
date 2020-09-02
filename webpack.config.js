@@ -23,7 +23,7 @@ const common = ['./src/common.js']
 let devtool
 
 if (isDev) {
-  main.push('webpack-dev-server/client?http://0.0.0.0:8080')
+  main.push('webpack-dev-server/client?https://0.0.0.0:443')
   devtool = 'source-map'
 }
 
