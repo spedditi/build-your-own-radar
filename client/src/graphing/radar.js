@@ -442,7 +442,7 @@ const Radar = function (size, radar) {
     header.select('.radar-title')
       .append('div')
       .attr('class', 'radar-title__logo')
-      .html('<a href="https://www.thoughtworks.com"> <img src="/images/logo.png" /> </a>')
+      .html('<a href="https://www.microsoft.com/en-us/msservices/consulting"> <img src="/images/t-logo.png" /> </a>')
 
     buttonsGroup = header.append('div')
       .classed('buttons-group', true)
@@ -498,9 +498,9 @@ const Radar = function (size, radar) {
       .append('div')
       .attr('class', 'footer-content')
       .append('p')
-      .html('Powered by <a href="https://www.thoughtworks.com"> ThoughtWorks</a>. ' +
-      'By using this service you agree to <a href="https://www.thoughtworks.com/radar/tos">ThoughtWorks\' terms of use</a>. ' +
-      'You also agree to our <a href="https://www.thoughtworks.com/privacy-policy">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. ' +
+      .html('Powered by <a href="https://www.microsoft.com/en-us/msservices/consulting"> Microsoft </a>. ' +
+      'By using this service you agree to <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default">Microsoft \' terms of use</a>. ' +
+      'You also agree to our <a href="https://privacy.microsoft.com/en-us/privacystatement">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. ' +
       'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.')
   }
 
