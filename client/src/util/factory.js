@@ -22,7 +22,8 @@ const ContentValidator = require('./contentValidator')
 const Sheet = require('./sheet')
 const ExceptionMessages = require('./exceptionMessages')
 const GoogleAuth = require('./googleAuth')
-const inputGoogleSheetURL ="https://docs.google.com/spreadsheets/d/e/2PACX-1vTwBPGYVL4qP15ohQ1h_SEgqBvcI6YKzyYKDG83-9Qgsqkz55lASTBnbYpoTUOigyg-PxufcQx6C7Ej/pubhtml?gid=0&single=true"
+const inputGoogleSheetURL ='https://docs.google.com/spreadsheets/d/1RNZeXRguCQwLOeArz6DqQS4HLYtqr9iy8kleEZ7GAWk/edit'
+
 
 const plotRadar = function (title, blips, currentRadarName, alternativeRadars) {
   if (title.endsWith('.csv')) {
@@ -223,8 +224,7 @@ const GoogleSheetInput = function () {
 
       plotLogo(content)
 
-      var bannerText = '<div><h1>MCS Tech Radar</h1><p>Once you\'ve <a href ="https://www.microsoft.com">created your Radar</a>, you can use this service' +
-        ' to generate an <br />interactive version of your Technology Radar. Not sure how? <a href ="https://www.microsoft.com">Read this first.</a></p></div>'
+      var bannerText = '<div><h1></h1></div>'
 
       plotBanner(content, bannerText)
 
@@ -258,9 +258,6 @@ function plotLoading (content) {
 }
 
 function plotLogo (content) {
-  content.append('div')
-    .attr('class', 'input-sheet__logo')
-    .html('<a href="https://www.microsoft.com/en-us/msservices/consulting"><img src="/images/MS-logo.png" / ></a>')
 }
 
 function plotFooter (content) {
@@ -286,10 +283,14 @@ function plotForm (content) {
   content.append('div')
     .attr('class', 'input-sheet__form')
     .append('p')
-    .html('<strong>Enter the URL of your <a href="https://microsoft.com" target="_blank">Google Sheet or CSV</a> file below…</strong>')
+    .html('<strong>What is Tech Radar? </strong>')
 
   var form = content.select('.input-sheet__form').append('form')
     .attr('method', 'get')
+
+    form.append('p').html("The Microsoft Services Apps Tech Radar is a list of technologies and methodologies, complemented by an assessment result, called ring assignment. We use four rings with the following semantics:")
+
+    form.append('p').html(" <ul list-style-type:disc;\> <li>ADOPT — Technologies we have high confidence in to serve our purpose, also in large scale. Technologies with a usage culture in our client's production environments, low risk and recommended to be widely used.</li\> <br> <li>TRIAL — Technologies that we have seen work with success in project work to solve a real problem; first serious usage experience that confirm benefits and can uncover limitations. TRIAL technologies are slightly more risky; some engineers in our organization walked this path and will share knowledge and experiences. </li\> <br> <li> ASSESS — Technologies that are promising and have clear potential value-add for us; technologies worth to invest some research and prototyping efforts in to see if it has impact. ASSESS technologies have higher risks; they are often brand new and highly unproven in our organisation. You will find some engineers that have knowledge in the technology and promote it, you may even find teams that have started a prototyping effort.</li\> <br> <li>  HOLD — Technologies not recommended to be used for new projects. Technologies that we think are not (yet) worth to (further) invest in. HOLD technologies should not be used for new projects, but usually can be continued for existing projects.</li>  <br>  </ul>")
 
   form.append('input')
     .attr('type', 'text')
@@ -298,13 +299,14 @@ function plotForm (content) {
     .attr('value','https://docs.google.com/spreadsheets/d/1RNZeXRguCQwLOeArz6DqQS4HLYtqr9iy8kleEZ7GAWk/edit?usp=sharing')
     .attr('type','hidden')
 
-  form.append('button')
+
+    form.append('button')
     .attr('type', 'submit')
     .append('a')
     .attr('class', 'button')
     .text('Show MCS CoE Tech Radar')
 
-  form.append('p').html("<a href='https://www.microsoft.com/'>Need help?</a>")
+ 
 }
 
 function plotErrorMessage (exception) {

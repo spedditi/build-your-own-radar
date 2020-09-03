@@ -7,10 +7,10 @@ describe('graphingRadar', function () {
   var radar, toolsQuadrant, techniquesQuadrant, platformsQuadrant, languageFramework, element
 
   beforeEach(function () {
-    toolsQuadrant = new Quadrant('Tools')
-    techniquesQuadrant = new Quadrant('Techniques')
+    toolsQuadrant = new Quadrant('DevOps - Tools')
+    techniquesQuadrant = new Quadrant('Scenarios')
     platformsQuadrant = new Quadrant('Platforms')
-    languageFramework = new Quadrant('Languages')
+    languageFramework = new Quadrant('Frameworks')
 
     radar = new Radar()
     radar.addQuadrant(toolsQuadrant)
