@@ -498,11 +498,8 @@ const Radar = function (size, radar) {
       .append('div')
       .attr('class', 'footer-content')
       .append('p')
-      .html('Powered by <a href="https://www.microsoft.com/en-us/msservices/consulting"> Microsoft </a>. ' +
-      'By using this service you agree to <a href="https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default">Microsoft \' terms of use</a>. ' +
-      'You also agree to our <a href="https://privacy.microsoft.com/en-us/privacystatement">privacy policy</a>, which describes how we will gather, use and protect any personal data contained in your public Google Sheet. ' +
-      'This software is <a href="https://github.com/thoughtworks/build-your-own-radar">open source</a> and available for download and self-hosting.')
-  }
+      .html('Powered by <a href="https://www.microsoft.com/en-us/msservices/consulting"> MCS Azure & AI CoE Team </a>. '        )
+      }
 
   function mouseoverQuadrant (order) {
     d3.select('.quadrant-group-' + order).style('opacity', 1)
